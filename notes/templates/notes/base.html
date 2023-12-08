@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Default Title{% endblock %}</title>
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <h1>{% block header %}My Notes{% endblock %}</h1>
+        </div>
+        <div id="content">
+            {% block content %}{% endblock %}
+        </div>
+        <div id="footer">
+            <p>© 2023 My Notes</p>
+        </div>
+    </div>
+</body>
+</html>
+

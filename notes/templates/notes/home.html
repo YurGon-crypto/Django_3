@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Notes</title>
+</head>
+<body>
+    <h1>My Notes</h1>
+
+    <!-- Display Notes -->
+    <h2>Notes</h2>
+    <ul>
+        {% for note in notes %}
+            <li>{{ note.title }} - {{ note.text }} - {{ note.reminder }}</li>
+        {% endfor %}
+    </ul>
+
+    <!-- Display Categories -->
+    <h2>Categories</h2>
+    <ul>
+        {% for category in categories %}
+            <li>{{ category.title }}</li>
+        {% endfor %}
+    </ul>
+
+    <!-- Add Note Form -->
+    <h2>Add Note</h2>
+    <form method="post" action="{% url 'create_or_edit_note' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Note</button>
+    </form>
+</body>
+</html>
